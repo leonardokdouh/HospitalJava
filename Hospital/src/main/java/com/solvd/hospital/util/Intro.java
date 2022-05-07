@@ -4,6 +4,7 @@ import com.solvd.hospital.exceptions.ECheckMenu;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class Intro {
@@ -27,7 +28,7 @@ public class Intro {
 
 
             } while (option >= 5);
-        } catch (ECheckMenu e) {
+        } catch (InputMismatchException e) {
             LOG.debug(e + "You are entering the Hospital");
             return 1;
         }

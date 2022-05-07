@@ -25,7 +25,7 @@ public class Util {
         try {
             option = scanner.nextInt();
 
-        } catch (ECheckMenu e) {
+        } catch (InputMismatchException e) {
             LOG.debug("Sir/Miss, since you did not decide, i will sent you to the Medical department");
         }
         if (option > 4) {
@@ -56,7 +56,7 @@ public class Util {
                     LOG.debug("I'am glad you like our service!");
                 }
             }
-        } catch (ECheckSatisfaction e) {
+        } catch (InputMismatchException e) {
             LOG.debug(e + "You just need to put a letter");
         }
     }
@@ -96,7 +96,7 @@ public class Util {
         try {
             String mymail = mail();
             checkMail(mymail);
-        } catch (ECheckMail e) {
+        } catch (InputMismatchException e) {
             LOG.debug("Something went wrong" + e);
         }
     }

@@ -5,6 +5,7 @@ import com.solvd.hospital.interfaces.ISanitacer;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
+import java.util.InputMismatchException;
 import java.util.Random;
 import java.util.Scanner;
 
@@ -38,8 +39,8 @@ public class ANursery extends CAreas implements ISanitacer {
             }
             return 0;
 
-        } catch (ECheckTemperature e) {
-            LOG.debug("You are not getting your temp. We are going to hospitalize you");
+        } catch (InputMismatchException e) {
+            LOG.debug(e+" "+"You are not getting your temp. We are going to hospitalize you");
             return 50;
         }
     }

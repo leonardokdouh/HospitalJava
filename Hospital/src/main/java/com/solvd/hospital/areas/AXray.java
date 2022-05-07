@@ -5,6 +5,7 @@ import com.solvd.hospital.interfaces.ISanitacer;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class AXray extends CAreas implements ISanitacer {
@@ -25,7 +26,7 @@ public class AXray extends CAreas implements ISanitacer {
             if (pain < 0) {
                 throw new ECheckXRay("Pain cannot be negative");
             }
-        } catch (ECheckXRay e) {
+        } catch (InputMismatchException e) {
             LOG.debug("e" + "I see it hurts a lot");
         } finally {
             if (pain <= 4 && pain > 0) {

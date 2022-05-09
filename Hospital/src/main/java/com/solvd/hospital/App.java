@@ -27,8 +27,8 @@ import com.solvd.hospital.persons.PAdministrative;
 import com.solvd.hospital.persons.PDoctors;
 import com.solvd.hospital.persons.PNurses;
 import com.solvd.hospital.persons.PPatients;
-import com.solvd.hospital.threads.FirstThread;
-import com.solvd.hospital.threads.ThirdThread;
+import com.solvd.hospital.threads.Thread;
+
 import com.solvd.hospital.util.*;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -96,18 +96,20 @@ public class App {
 
                 ExecutorService thePool = Executors.newFixedThreadPool(3);
 
-                FirstThread firsT = new FirstThread();
-                Thread thirdT = new Thread(new ThirdThread());
-
-                firsT.setPriority(5);
+                Thread firsT = new Thread("please Help i don`t want to dieee !!!!!!", 1);
+                Thread secondT = new Thread("Please heal me !!!!", 2);
+                Thread thirdT = new Thread("THE HOSPITAL WILL CLOSE IN  ");
+                firsT.setPriority(2);
+                secondT.setPriority(2);
                 thirdT.setPriority(10);
-                thePool.execute(firsT);
-                thePool.execute(thirdT);
+
+                firsT.start();
+                secondT.start();
+                thirdT.start();
                 thePool.shutdown();
 
                 break;
         }
-
     }
 
 

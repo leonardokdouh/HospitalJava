@@ -64,7 +64,7 @@ public class App {
 
         switch (introOption) {
             case 1:
-                printingThings(p -> LOG.debug("WELCOME TO THE HOSPITAL" + p));
+                printingThings(p -> LOG.debug("WELCOME TO THE HOSPITAL DEAR USER" + p));
 
                 LOG.debug("Right now this professionals are available:");
                 cols.availableDoctors();
